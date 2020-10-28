@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 // TODO: Bonus - make this class a Singleton!
@@ -25,21 +26,14 @@ public class BulletPoolManager : MonoBehaviour
     {
 
     }
-    public bool Ammo
-    {
-        if (BllAmnt.Count == 0)
-        {
-            return true;
-        }
-        else
-            return false;
-    }
 
-    pivate void CreateBlltPool()
+    pivate void CreateBllPool()
     {
         for (int i = 0; i < BllAmnt; i++)
         {
-
+            var tBull = Instantiate(bullet);
+            tBull.transform.parent = transform;
+            tBull.SetActive(false);
         }
     }
 
@@ -51,6 +45,7 @@ public class BulletPoolManager : MonoBehaviour
         if (BltQ.empty == true)
         {
             tBull = Instantiate(bullet);
+            tBull.transform.parent = transform;
         }
         else
         {
