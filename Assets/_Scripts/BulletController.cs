@@ -35,13 +35,11 @@ public class BulletController : MonoBehaviour
         {
             //TODO: This code needs to change to use the BulletPoolManager's
 
-
-
             //TODO: ResetBullet function which will return the bullet to the pool
 
             void ResetBullet()
             {
-                BltQ.
+                dequeue.Ammo(gameObject);
             }
 
             Destroy(this.gameObject);
