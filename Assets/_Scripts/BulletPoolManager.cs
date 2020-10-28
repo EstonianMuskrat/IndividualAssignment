@@ -9,45 +9,60 @@ using UnityEngine;
 public class BulletPoolManager : MonoBehaviour
 {
     public GameObject bullet;
-    public BulletController bulletCon;
+    public int BlltAmnt;
     //TODO: create a structure to contain a collection of bullets
-
-    struct BullColl
-    {
-        int BltAmnt;
-    };
+    private Queue<GameObject> Ammo;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletCon.manager = this;
         // TODO: add a series of bullets to the Bullet Pool
-        Queue<GameObject> BltQ;
+        Ammo = new Queue<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public bool Ammo
+    {
+        if (BllAmnt.Count == 0)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    pivate void CreateBlltPool()
+    {
+        for (int i = 0; i < BllAmnt; i++)
+        {
+
+        }
     }
 
     //TODO: modify this function to return a bullet from the Pool
+
     public GameObject GetBullet()
     {
+        GameObject tBull;
         if (BltQ.empty == true)
         {
-            return "Empty";
+            tBull = Instantiate(bullet);
         }
         else
         {
-            BltQ.pop();
+            tBull = BltQ.Dequeue();
+            tBull.SetActive(true);
         }
-        return bullet;
+        return tBull;
     }
 
     //TODO: modify this function to reset/return a bullet back to the Pool 
     public void ResetBullet(GameObject bullet)
     {
-        BlyQ.push(GameObject);
+        Instantiate BlyQ.push(GameObject);
     }
 }

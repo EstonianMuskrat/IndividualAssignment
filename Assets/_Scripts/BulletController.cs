@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Util;
-#include "BulletPoolManager";
 
 public class BulletController : MonoBehaviour
 {

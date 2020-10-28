@@ -120,7 +120,9 @@ public class PlayerController : MonoBehaviour
 
                 //TODO: this code needs to change to user the BulletPoolManager's
                 //TODO: GetBullet function which will return a reference to a bullet object. 
+                BulletPoolManager.ResetBullet(this.GameObject);
                 //TODO: Ensure you position the new bullet at the bulletSpawn position
+
                 Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
             }
 
